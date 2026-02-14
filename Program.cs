@@ -18,7 +18,13 @@
 
             obj2.Invoke(50, 255.45f, 123.456);
 
-            Predicate<string> obj3 = new Predicate<string>(CheckLength);
+            Predicate<string> obj3 = (name) =>
+            {
+                if(name.Length > 5) 
+                    return true;
+
+                return false;
+            };
 
             bool res = obj3.Invoke("Ikechukwu");
 
